@@ -667,6 +667,12 @@ a {
         display: flex;
     }
 
+    .hero-content {
+        padding: 30px 20px;
+        margin: 0 10px;
+        max-width: 100%;
+    }
+
     .hero h1 {
         font-size: 2.2rem;
     }
@@ -725,6 +731,10 @@ a {
 }
 
 @media (max-width: 480px) {
+    .hero-content {
+        padding: 25px 15px;
+    }
+
     .hero h1 {
         font-size: 1.8rem;
     }
