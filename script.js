@@ -58,7 +58,7 @@ quoteForm.addEventListener('submit', (e) => {
     whatsappMsg += `\n*Details:*\n${message}`;
 
     const encoded = encodeURIComponent(whatsappMsg);
-    const whatsappURL = `https://wa.me/447466025934?text=${encoded}`;
+    const whatsappURL = `https://wa.me/447424714686?text=${encoded}`;
 
     // Also send via email as backup (mailto)
     const emailSubject = encodeURIComponent(`Quote Request - ${service} - ${name}`);
