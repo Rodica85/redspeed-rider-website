@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://redspeedrider.co.uk/sitemap.xml
