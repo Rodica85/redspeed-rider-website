@@ -34,7 +34,7 @@ const quoteForm = document.getElementById('quoteForm');
 const formSuccess = document.getElementById('formSuccess');
 const submitBtn = document.getElementById('submitBtn');
 
-quoteForm.addEventListener('submit', (e) => {
+if (quoteForm) quoteForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const name = document.getElementById('name').value.trim();
@@ -160,7 +160,7 @@ let chatState = {
     data: { name: '', phone: '', service: '', details: '' }
 };
 
-chatToggle.addEventListener('click', () => {
+if (chatToggle) chatToggle.addEventListener('click', () => {
     chatWidget.classList.toggle('open');
     if (chatWidget.classList.contains('open') && chatMessages.children.length === 0) {
         startChat();
@@ -320,7 +320,7 @@ function sendToWhatsApp() {
     }, 500);
 }
 
-chatSend.addEventListener('click', () => handleUserInput(chatInput.value));
-chatInput.addEventListener('keypress', (e) => {
+if (chatSend) chatSend.addEventListener('click', () => handleUserInput(chatInput.value));
+if (chatInput) chatInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') handleUserInput(chatInput.value);
 });

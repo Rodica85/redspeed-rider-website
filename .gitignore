@@ -1,0 +1,5 @@
+.DS_Store
+.claude/
+van_base64.txt
+*.log
+node_modules/
