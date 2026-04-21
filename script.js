@@ -133,3 +133,194 @@ if (dateInput) {
     const today = new Date().toISOString().split('T')[0];
     dateInput.setAttribute('min', today);
 }
+
+// ===== AI CHAT ASSISTANT =====
+const chatWidget = document.getElementById('chatWidget');
+const chatToggle = document.getElementById('chatToggle');
+const chatMessages = document.getElementById('chatMessages');
+const chatInput = document.getElementById('chatInput');
+const chatSend = document.getElementById('chatSend');
+const chatInputArea = document.getElementById('chatInputArea');
+
+const WHATSAPP_NUMBER = '447424714686';
+
+const SERVICES_LIST = [
+    'Man with a Van',
+    'Home & Office Removals',
+    'Furniture Delivery & Assembly',
+    'Marketplace Collections',
+    'Event & Equipment Transport',
+    'Pallet & Commercial Deliveries',
+    'Storage Moves',
+    'Other'
+];
+
+let chatState = {
+    step: 'greeting',
+    data: { name: '', phone: '', service: '', details: '' }
+};
+
+chatToggle.addEventListener('click', () => {
+    chatWidget.classList.toggle('open');
+    if (chatWidget.classList.contains('open') && chatMessages.children.length === 0) {
+        startChat();
+    }
+});
+
+function appendMessage(text, type = 'bot') {
+    const msg = document.createElement('div');
+    msg.className = `chat-msg ${type}`;
+    msg.innerHTML = text;
+    chatMessages.appendChild(msg);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function appendOptions(options) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'chat-options';
+    options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = 'chat-option-btn';
+        btn.textContent = opt;
+        btn.addEventListener('click', () => {
+            handleOptionClick(opt);
+            wrapper.remove();
+        });
+        wrapper.appendChild(btn);
+    });
+    chatMessages.appendChild(wrapper);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function showTyping() {
+    const typing = document.createElement('div');
+    typing.className = 'chat-typing';
+    typing.id = 'chatTyping';
+    typing.innerHTML = '<span></span><span></span><span></span>';
+    chatMessages.appendChild(typing);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function hideTyping() {
+    const typing = document.getElementById('chatTyping');
+    if (typing) typing.remove();
+}
+
+function botSay(text, callback, delay = 900) {
+    showTyping();
+    setTimeout(() => {
+        hideTyping();
+        appendMessage(text, 'bot');
+        if (callback) callback();
+    }, delay);
+}
+
+function setInputEnabled(enabled, placeholder = 'Type your answer...') {
+    chatInput.disabled = !enabled;
+    chatSend.disabled = !enabled;
+    chatInput.placeholder = placeholder;
+    if (enabled) chatInput.focus();
+}
+
+function startChat() {
+    setInputEnabled(false, 'Choose an option...');
+    botSay("👋 Hi! Welcome to <strong>REDSPEED RIDER</strong>!", () => {
+        botSay("I'll help you get a <strong>free quote</strong> in just a few quick questions. Ready?", () => {
+            setTimeout(() => appendOptions(["Yes, let's go! 🚀", "Just browsing"]), 300);
+        }, 1100);
+    }, 600);
+}
+
+function handleOptionClick(choice) {
+    appendMessage(choice, 'user');
+
+    if (chatState.step === 'greeting') {
+        if (choice === 'Just browsing') {
+            botSay("No problem! Feel free to explore. If you change your mind, I'm here. You can also call us directly at <strong>07424 714686</strong> or message us on WhatsApp anytime. 😊");
+            return;
+        }
+        chatState.step = 'name';
+        botSay("Great! First, what's your <strong>name</strong>?", () => {
+            setInputEnabled(true, 'Your name...');
+        });
+    } else if (chatState.step === 'service') {
+        chatState.data.service = choice;
+        chatState.step = 'details';
+        botSay(`Got it — <strong>${choice}</strong>. ✅`, () => {
+            botSay("Briefly describe what you need moved (items, pickup/drop-off, any special requirements).", () => {
+                setInputEnabled(true, 'Describe your job...');
+            }, 900);
+        }, 700);
+    }
+}
+
+function handleUserInput(text) {
+    if (!text.trim()) return;
+    appendMessage(text, 'user');
+    chatInput.value = '';
+
+    if (chatState.step === 'name') {
+        chatState.data.name = text.trim();
+        chatState.step = 'phone';
+        setInputEnabled(false);
+        botSay(`Nice to meet you, <strong>${chatState.data.name}</strong>! 👋`, () => {
+            botSay("What's the best <strong>phone number</strong> to call you back on?", () => {
+                setInputEnabled(true, 'e.g. 07xxx xxx xxx');
+            }, 900);
+        }, 700);
+    } else if (chatState.step === 'phone') {
+        chatState.data.phone = text.trim();
+        chatState.step = 'service';
+        setInputEnabled(false);
+        botSay("Perfect! 📞", () => {
+            botSay("Which service do you need?", () => {
+                appendOptions(SERVICES_LIST);
+            }, 900);
+        }, 600);
+    } else if (chatState.step === 'details') {
+        chatState.data.details = text.trim();
+        chatState.step = 'done';
+        setInputEnabled(false);
+        botSay("Thank you! One moment while I send this to our team... ⏳", () => {
+            sendToWhatsApp();
+        }, 1000);
+    }
+}
+
+function sendToWhatsApp() {
+    const { name, phone, service, details } = chatState.data;
+    let msg = `🚚 *NEW QUOTE REQUEST (via website chat)*\n\n`;
+    msg += `*Name:* ${name}\n`;
+    msg += `*Phone:* ${phone}\n`;
+    msg += `*Service:* ${service}\n\n`;
+    msg += `*Details:*\n${details}`;
+
+    const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+
+    setTimeout(() => {
+        botSay(`🎉 Thank you, <strong>${name}</strong>!`, () => {
+            botSay(`Your request has been received. Our team will contact you <strong>as soon as possible</strong> on <strong>${phone}</strong> with your <strong>free quote</strong>. 📞`, () => {
+                botSay(`💡 <strong>Want an instant reply?</strong> Send your details directly to us on WhatsApp:`, () => {
+                    const finalOptions = document.createElement('div');
+                    finalOptions.className = 'chat-options';
+                    finalOptions.innerHTML = `
+                        <a href="${whatsappURL}" target="_blank" rel="noopener" class="chat-option-btn" style="text-decoration:none;display:block;text-align:center;background:#25D366;color:white;border-color:#25D366;">
+                            <i class="fab fa-whatsapp"></i> Send on WhatsApp
+                        </a>
+                        <a href="tel:+447424714686" class="chat-option-btn" style="text-decoration:none;display:block;text-align:center;">
+                            📞 Call us now
+                        </a>
+                    `;
+                    chatMessages.appendChild(finalOptions);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                    chatInputArea.style.display = 'none';
+                }, 900);
+            }, 1100);
+        }, 800);
+    }, 500);
+}
+
+chatSend.addEventListener('click', () => handleUserInput(chatInput.value));
+chatInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') handleUserInput(chatInput.value);
+});

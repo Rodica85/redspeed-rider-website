@@ -269,6 +269,29 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- AI CHAT ASSISTANT -->
+    <div id="chatWidget" class="chat-widget">
+        <button id="chatToggle" class="chat-toggle" aria-label="Open chat">
+            <i class="fas fa-comments chat-icon-open"></i>
+            <i class="fas fa-times chat-icon-close"></i>
+            <span class="chat-badge">1</span>
+        </button>
+        <div id="chatBox" class="chat-box">
+            <div class="chat-header">
+                <div class="chat-avatar"><i class="fas fa-headset"></i></div>
+                <div class="chat-header-info">
+                    <h4>REDSPEED Assistant</h4>
+                    <p><span class="chat-online"></span> Online — typically replies instantly</p>
+                </div>
+            </div>
+            <div id="chatMessages" class="chat-messages"></div>
+            <div id="chatInputArea" class="chat-input-area">
+                <input type="text" id="chatInput" placeholder="Type your answer..." autocomplete="off">
+                <button id="chatSend" aria-label="Send"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
