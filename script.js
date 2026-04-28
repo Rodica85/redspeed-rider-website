@@ -324,3 +324,76 @@ if (chatSend) chatSend.addEventListener('click', () => handleUserInput(chatInput
 if (chatInput) chatInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') handleUserInput(chatInput.value);
 });
+
+/* ===== COOKIE BANNER (UK GDPR / PECR) ===== */
+(function() {
+    const COOKIE_NAME = 'rsr_cookie_consent';
+    const COOKIE_DURATION_DAYS = 365;
+
+    function setCookie(name, value, days) {
+        const d = new Date();
+        d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+        document.cookie = name + '=' + value + ';expires=' + d.toUTCString() + ';path=/;SameSite=Lax;Secure';
+    }
+    function getCookie(name) {
+        const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+        return match ? match[2] : null;
+    }
+
+    function buildBanner() {
+        const banner = document.createElement('div');
+        banner.className = 'cookie-banner';
+        banner.id = 'cookieBanner';
+        banner.setAttribute('role', 'dialog');
+        banner.setAttribute('aria-label', 'Cookie consent');
+        banner.innerHTML = `
+            <div class="cookie-banner-inner">
+                <div class="cookie-banner-text">
+                    <strong>We value your privacy.</strong>
+                    We use only essential cookies for site security (Cloudflare). With your permission, we may also use anonymous analytics to improve the site. See our <a href="/cookies/">Cookie Policy</a> and <a href="/privacy/">Privacy Policy</a>.
+                </div>
+                <div class="cookie-banner-buttons">
+                    <button class="cookie-btn-secondary" id="cookieDecline" type="button">Essential only</button>
+                    <button class="cookie-btn-primary" id="cookieAccept" type="button">Accept all</button>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(banner);
+
+        document.getElementById('cookieAccept').addEventListener('click', function() {
+            setCookie(COOKIE_NAME, 'all', COOKIE_DURATION_DAYS);
+            hideBanner();
+            window.dispatchEvent(new CustomEvent('cookieConsent', {detail: {level: 'all'}}));
+        });
+        document.getElementById('cookieDecline').addEventListener('click', function() {
+            setCookie(COOKIE_NAME, 'essential', COOKIE_DURATION_DAYS);
+            hideBanner();
+            window.dispatchEvent(new CustomEvent('cookieConsent', {detail: {level: 'essential'}}));
+        });
+
+        requestAnimationFrame(() => banner.classList.add('visible'));
+    }
+
+    function hideBanner() {
+        const b = document.getElementById('cookieBanner');
+        if (b) {
+            b.classList.remove('visible');
+            setTimeout(() => b.remove(), 400);
+        }
+    }
+
+    // Public API to re-open settings (linked from cookie policy page)
+    window.openCookieSettings = function() {
+        document.cookie = COOKIE_NAME + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';
+        if (!document.getElementById('cookieBanner')) buildBanner();
+    };
+
+    // Auto-show on first visit
+    if (!getCookie(COOKIE_NAME)) {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', buildBanner);
+        } else {
+            buildBanner();
+        }
+    }
+})();
