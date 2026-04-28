@@ -25,6 +25,8 @@
     <meta name="twitter:image" content="https://redspeedrider.co.uk/business-card.png">
 
     <meta name="theme-color" content="#DC2626">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
@@ -32,32 +34,7 @@
     <link rel="stylesheet" href="/styles.css">
 
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "Furniture Delivery and Assembly",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "REDSPEED RIDER LTD",
-        "telephone": "+447424714686",
-        "email": "rider.redspeed@gmail.com",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Abingdon",
-          "addressRegion": "Oxfordshire",
-          "postalCode": "OX14 5PN",
-          "addressCountry": "GB"
-        },
-        "url": "https://redspeedrider.co.uk/"
-      },
-      "areaServed": [
-        {"@type": "City", "name": "Abingdon"},
-        {"@type": "City", "name": "Oxford"},
-        {"@type": "City", "name": "Didcot"},
-        {"@type": "Country", "name": "United Kingdom"}
-      ],
-      "description": "Furniture collection, delivery and assembly from IKEA, DFS, Argos and online marketplaces. Same-day service available."
-    }
+    {"@context":"https://schema.org","@type":"Service","serviceType":"Furniture Delivery and Assembly","provider":{"@type":"LocalBusiness","name":"REDSPEED RIDER LTD","telephone":"+447424714686","email":"rider.redspeed@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Abingdon","addressRegion":"Oxfordshire","postalCode":"OX14 5PN","addressCountry":"GB"},"url":"https://redspeedrider.co.uk/"},"areaServed":[{"@type":"City","name":"Abingdon"},{"@type":"City","name":"Oxford"},{"@type":"City","name":"Didcot"},{"@type":"Country","name":"United Kingdom"}],"description":"Furniture collection, delivery and assembly from IKEA, DFS, Argos and online marketplaces. Same-day service available.","offers":{"@type":"AggregateOffer","priceCurrency":"GBP","lowPrice":"50","highPrice":"300","offerCount":"1","availability":"https://schema.org/InStock","url":"https://redspeedrider.co.uk/services/furniture-delivery/"},"name":"Furniture Delivery"}
     </script>
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"MovingCompany","name":"REDSPEED RIDER LTD","image":"https://redspeedrider.co.uk/business-card-HD.png","logo":"https://redspeedrider.co.uk/logo-square-512.png","telephone":"+447424714686","email":"rider.redspeed@gmail.com","url":"https://redspeedrider.co.uk/","priceRange":"££","description":"Professional man with a van and removals service based in Abingdon, Oxfordshire. Home & office removals, furniture delivery, student moves across the UK.","address":{"@type":"PostalAddress","addressLocality":"Abingdon","addressRegion":"Oxfordshire","postalCode":"OX14 5PN","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.6708,"longitude":-1.2826},"areaServed":[{"@type":"City","name":"Abingdon"},{"@type":"City","name":"Oxford"},{"@type":"City","name":"Didcot"},{"@type":"City","name":"Witney"},{"@type":"City","name":"Bicester"},{"@type":"City","name":"London"},{"@type":"Country","name":"United Kingdom"}],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"07:00","closes":"21:00"}]}
@@ -65,6 +42,10 @@
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"WebPage","@id":"https://redspeedrider.co.uk/services/furniture-delivery/","url":"https://redspeedrider.co.uk/services/furniture-delivery/","name":"Furniture Delivery & Assembly Oxford | REDSPEED RIDER LTD","description":"IKEA, DFS, Argos and marketplace furniture delivery & assembly across Oxfordshire and the UK. Same-day available. We collect, deliver and can assemble your furniture.","inLanguage":"en-GB","isPartOf":{"@type":"WebSite","@id":"https://redspeedrider.co.uk/#website","url":"https://redspeedrider.co.uk/","name":"REDSPEED RIDER LTD"},"datePublished":"2026-04-21","dateModified":"2026-04-27","author":{"@type":"Organization","name":"REDSPEED RIDER LTD","url":"https://redspeedrider.co.uk/"},"publisher":{"@type":"Organization","name":"REDSPEED RIDER LTD","url":"https://redspeedrider.co.uk/","logo":{"@type":"ImageObject","url":"https://redspeedrider.co.uk/logo-square-512.png"}}}
     </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://redspeedrider.co.uk/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://redspeedrider.co.uk/services/man-with-a-van/"},{"@type":"ListItem","position":3,"name":"Furniture Delivery","item":"https://redspeedrider.co.uk/services/furniture-delivery/"}]}
+    </script>
+
 
 
 </head>
@@ -198,6 +179,45 @@
             </div>
         </div>
     </section>
+    <section class="services" style="background: var(--gray-100);">
+        <div class="container">
+            <h2 class="section-title">More <span class="text-red">Services</span></h2>
+            <p class="section-subtitle">Whatever you need to move, we cover it.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-van-shuttle"></i></div>
+                    <h3><a href="/services/man-with-a-van/" style="color:inherit;">Man with a Van</a></h3>
+                    <p>Single items, student moves, small jobs.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-house-chimney"></i></div>
+                    <h3><a href="/services/home-removals/" style="color:inherit;">Home Removals</a></h3>
+                    <p>Full house moves with packing.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-building"></i></div>
+                    <h3><a href="/services/office-removals/" style="color:inherit;">Office Removals</a></h3>
+                    <p>Out-of-hours business moves.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-warehouse"></i></div>
+                    <h3><a href="/services/storage-moves/" style="color:inherit;">Storage Unit Moves</a></h3>
+                    <p>To/from self-storage facilities.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-calendar-check"></i></div>
+                    <h3><a href="/services/event-transport/" style="color:inherit;">Event Transport</a></h3>
+                    <p>Equipment for events & weddings.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-bag-shopping"></i></div>
+                    <h3><a href="/services/marketplace-collections/" style="color:inherit;">Marketplace Collections</a></h3>
+                    <p>eBay, Gumtree, Facebook pickups.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <footer class="footer" id="contact">
         <div class="container">
@@ -236,6 +256,6 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <script src="/script.js"></script>
+    <script src="/script.js" defer></script>
 </body>
 </html>
