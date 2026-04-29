@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A0A0A"/>
+      <stop offset="50%" style="stop-color:#1A1A1A"/>
+      <stop offset="100%" style="stop-color:#2A0A0A"/>
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#EF4444"/>
+      <stop offset="100%" style="stop-color:#B91C1C"/>
+    </linearGradient>
+    <filter id="vanShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="12"/>
+      <feOffset dx="0" dy="8" result="offsetblur"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.5"/></feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Rounded square background -->
+  <rect width="1024" height="1024" rx="140" fill="url(#bgGrad)"/>
+
+  <!-- Decorative glow circles -->
+  <circle cx="880" cy="140" r="220" fill="#DC2626" opacity="0.12"/>
+  <circle cx="140" cy="880" r="180" fill="#DC2626" opacity="0.10"/>
+
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="1024" height="16" fill="url(#redGrad)"/>
+
+  <!-- Speed lines behind van -->
+  <g opacity="0.5">
+    <line x1="60" y1="380" x2="200" y2="380" stroke="#DC2626" stroke-width="10" stroke-linecap="round"/>
+    <line x1="30" y1="430" x2="180" y2="430" stroke="#DC2626" stroke-width="8" stroke-linecap="round" opacity="0.7"/>
+    <line x1="80" y1="480" x2="170" y2="480" stroke="#DC2626" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+  </g>
+
+  <!-- VAN PHOTO (centered horizontally, upper area) -->
+  <image href="van-transparent.png" x="150" y="250" width="724" height="365" preserveAspectRatio="xMidYMid meet" filter="url(#vanShadow)"/>
+
+  <!-- BRAND NAME -->
+  <g text-anchor="middle">
+    <!-- REDSPEED -->
+    <text x="512" y="740" font-family="Arial Black, Helvetica, sans-serif" font-size="120" font-weight="900" fill="#DC2626" letter-spacing="4">REDSPEED</text>
+
+    <!-- RIDER -->
+    <text x="512" y="870" font-family="Arial Black, Helvetica, sans-serif" font-size="110" font-weight="900" fill="#FFFFFF" letter-spacing="20">RIDER</text>
+
+    <!-- Underline -->
+    <line x1="350" y1="910" x2="674" y2="910" stroke="url(#redGrad)" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Tagline -->
+    <text x="512" y="965" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="600" fill="#E5E5E5" letter-spacing="8">TRANSPORT &amp; REMOVALS</text>
+  </g>
+</svg>

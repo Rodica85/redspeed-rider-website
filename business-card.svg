@@ -10,10 +10,6 @@
       <stop offset="0%" style="stop-color:#DC2626;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#B91C1C;stop-opacity:1" />
     </linearGradient>
-    <linearGradient id="vanBg" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#E5E7EB;stop-opacity:1" />
-    </linearGradient>
     <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
       <feOffset dx="0" dy="4" result="offsetblur"/>
@@ -60,37 +56,46 @@
   <!-- Divider -->
   <line x1="780" y1="465" x2="1430" y2="465" stroke="#333333" stroke-width="1"/>
 
-  <!-- Phone numbers -->
+  <!-- Phone numbers (LEFT column of info) -->
   <g transform="translate(780, 520)">
-    <!-- Number 1 - Main -->
-    <g transform="translate(0, 0)">
-      <circle cx="30" cy="15" r="30" fill="url(#redBar)"/>
-      <text x="30" y="26" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="white">📞</text>
-      <text x="85" y="5" font-family="Arial, sans-serif" font-size="14" fill="#999999" letter-spacing="2">CALL OR WHATSAPP</text>
-      <text x="85" y="40" font-family="Arial Black, sans-serif" font-size="38" font-weight="900" fill="white">07466 025934</text>
-    </g>
+    <circle cx="30" cy="15" r="30" fill="url(#redBar)"/>
+    <text x="30" y="26" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="white">📞</text>
+    <text x="85" y="5" font-family="Arial, sans-serif" font-size="14" fill="#999999" letter-spacing="2">CALL OR WHATSAPP</text>
+    <text x="85" y="40" font-family="Arial Black, sans-serif" font-size="38" font-weight="900" fill="white">07466 025934</text>
   </g>
 
   <g transform="translate(780, 615)">
-    <!-- Number 2 - Alternative -->
-    <g transform="translate(0, 0)">
-      <circle cx="30" cy="15" r="30" fill="#25D366"/>
-      <text x="30" y="26" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="white">💬</text>
-      <text x="85" y="5" font-family="Arial, sans-serif" font-size="14" fill="#999999" letter-spacing="2">ALTERNATIVE NUMBER</text>
-      <text x="85" y="40" font-family="Arial Black, sans-serif" font-size="38" font-weight="900" fill="white">07424 714686</text>
-    </g>
+    <circle cx="30" cy="15" r="30" fill="#25D366"/>
+    <text x="30" y="26" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="white">💬</text>
+    <text x="85" y="5" font-family="Arial, sans-serif" font-size="14" fill="#999999" letter-spacing="2">ALTERNATIVE NUMBER</text>
+    <text x="85" y="40" font-family="Arial Black, sans-serif" font-size="38" font-weight="900" fill="white">07424 714686</text>
   </g>
 
   <!-- Website -->
   <g transform="translate(780, 740)">
     <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" fill="#999999" letter-spacing="2">VISIT OUR WEBSITE</text>
-    <text x="0" y="45" font-family="Arial Black, sans-serif" font-size="42" font-weight="900" fill="#DC2626" letter-spacing="1">redspeedrider.co.uk</text>
+    <text x="0" y="45" font-family="Arial Black, sans-serif" font-size="38" font-weight="900" fill="#DC2626" letter-spacing="1">redspeedrider.co.uk</text>
   </g>
 
-  <!-- Location (plain text, cleaner) -->
+  <!-- Location -->
   <g transform="translate(780, 830)">
     <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" fill="#999999" letter-spacing="2">LOCATION</text>
     <text x="0" y="30" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="white" letter-spacing="1">📍 Abingdon · Oxfordshire · UK</text>
+  </g>
+
+  <!-- === REVIEW QR CODE (right side, prominent) === -->
+  <g transform="translate(1220, 510)">
+    <!-- White rounded background card behind QR -->
+    <rect x="-15" y="-15" width="230" height="300" rx="16" fill="white" filter="url(#softShadow)"/>
+    <!-- 5 star decoration at top -->
+    <g transform="translate(100, 12)" fill="#F59E0B">
+      <text x="0" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" letter-spacing="2">★ ★ ★ ★ ★</text>
+    </g>
+    <!-- QR code image -->
+    <image href="qr-review.png" x="0" y="25" width="200" height="200"/>
+    <!-- Caption -->
+    <text x="100" y="255" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="19" font-weight="900" fill="#DC2626" letter-spacing="1">LEAVE A REVIEW</text>
+    <text x="100" y="278" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#333333" letter-spacing="1">Scan · Takes 30 seconds</text>
   </g>
 
   <!-- Bottom red accent -->
