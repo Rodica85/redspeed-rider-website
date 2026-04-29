@@ -3,3 +3,7 @@
 van_base64.txt
 *.log
 node_modules/
+
+# SEO audit snapshots (kept outside repo to avoid bloat)
+seo-report-*.json
+seo-report-*.pdf
