@@ -1116,3 +1116,67 @@ a {
         flex: 1;
     }
 }
+
+/* ===== SERVICES GRID: 3-ITEM VARIANT ===== */
+/* For .services-grid sections with exactly 3 cards (e.g. contact page's
+   "How to Reach Us") so the row fills evenly instead of leaving an empty
+   4th column and looking pushed to one side. Declared last so it wins
+   over the base .services-grid responsive rules above. */
+.services-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1024px) {
+    .services-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .services-grid-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== OPENING HOURS: SIMPLE LIST ===== */
+.hours-list {
+    list-style: none;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.hours-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 30px;
+    padding: 18px 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hours-row:last-child {
+    border-bottom: none;
+}
+
+.hours-day {
+    font-weight: 700;
+    color: var(--white);
+    flex-shrink: 0;
+}
+
+.hours-time {
+    color: var(--white);
+    text-align: right;
+}
+
+@media (max-width: 480px) {
+    .hours-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .hours-time {
+        text-align: left;
+    }
+}
