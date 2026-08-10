@@ -143,12 +143,11 @@ a {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
     background: linear-gradient(135deg, rgba(17,17,17,0.4) 0%, rgba(26,26,26,0.3) 50%, rgba(185,28,28,0.35) 100%), url('hero-van-loading.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 120px 20px 80px 6%;
+    padding: 120px 0 80px;
     text-align: left;
     overflow: hidden;
 }
@@ -158,10 +157,13 @@ a {
     display: none;
 }
 
+/* .hero-content also has the .container class, so its left edge
+   (max-width 1200px, centered, 20px padding) lines up exactly with
+   the navbar logo above it. */
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 800px;
+    width: 100%;
 }
 
 .hero h1 {
@@ -925,10 +927,6 @@ a {
 
     .nav-links.active {
         display: flex;
-    }
-
-    .hero-content {
-        max-width: 100%;
     }
 
     .hero h1 {
