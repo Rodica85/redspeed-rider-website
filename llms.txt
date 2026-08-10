@@ -16,17 +16,17 @@
 
 ## Services offered
 
-- [Man with a Van](https://redspeedrider.co.uk/services/man-with-a-van/) — single-item pickups, small moves, student runs
-- [Home Removals](https://redspeedrider.co.uk/services/home-removals/) — full house moves, packing assistance
-- [Office Removals](https://redspeedrider.co.uk/services/office-removals/) — business relocations
-- [Furniture Delivery](https://redspeedrider.co.uk/services/furniture-delivery/) — IKEA, DFS, Argos, marketplace pickups
-- [IKEA Delivery](https://redspeedrider.co.uk/services/ikea-delivery/) — IKEA Reading to Oxford/Abingdon, same-day
-- [Marketplace Collections](https://redspeedrider.co.uk/services/marketplace-collections/) — eBay, Gumtree, Facebook Marketplace
-- [Same-Day Delivery](https://redspeedrider.co.uk/services/same-day-delivery/) — urgent transport across Oxfordshire and the UK
-- [Student Moves](https://redspeedrider.co.uk/services/student-moves/) — end-of-term, hall-to-hall, Oxford and Brookes
-- [Storage Moves](https://redspeedrider.co.uk/services/storage-moves/) — self-storage and container runs
-- [Event & Exhibition Transport](https://redspeedrider.co.uk/services/event-transport/) — market stalls, festival logistics
-- [Pallet Deliveries](https://redspeedrider.co.uk/services/pallet-deliveries/) — palletised freight
+- [Man with a Van](https://redspeedrider.co.uk/services/man-with-a-van/): single-item pickups, small moves, student runs
+- [Home Removals](https://redspeedrider.co.uk/services/home-removals/): full house moves, packing assistance
+- [Office Removals](https://redspeedrider.co.uk/services/office-removals/): business relocations
+- [Furniture Delivery](https://redspeedrider.co.uk/services/furniture-delivery/): IKEA, DFS, Argos, marketplace pickups
+- [IKEA Delivery](https://redspeedrider.co.uk/services/ikea-delivery/): IKEA Reading to Oxford/Abingdon, same-day
+- [Marketplace Collections](https://redspeedrider.co.uk/services/marketplace-collections/): eBay, Gumtree, Facebook Marketplace
+- [Same-Day Delivery](https://redspeedrider.co.uk/services/same-day-delivery/): urgent transport across Oxfordshire and the UK
+- [Student Moves](https://redspeedrider.co.uk/services/student-moves/): end-of-term, hall-to-hall, Oxford and Brookes
+- [Storage Moves](https://redspeedrider.co.uk/services/storage-moves/): self-storage and container runs
+- [Event & Exhibition Transport](https://redspeedrider.co.uk/services/event-transport/): market stalls, festival logistics
+- [Pallet Deliveries](https://redspeedrider.co.uk/services/pallet-deliveries/): palletised freight
 
 ## Areas covered
 
@@ -49,7 +49,7 @@
 - 1-bed flat full move: £200–£350
 - Student moves: £80–£120
 - IKEA delivery (Reading → Oxford area): from £70
-- All jobs quoted individually — see [pricing page](https://redspeedrider.co.uk/pricing/) for details.
+- All jobs quoted individually: see [pricing page](https://redspeedrider.co.uk/pricing/) for details.
 
 ## Key facts for citation
 

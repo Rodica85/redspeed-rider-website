@@ -246,7 +246,7 @@ function handleOptionClick(choice) {
     } else if (chatState.step === 'service') {
         chatState.data.service = choice;
         chatState.step = 'details';
-        botSay(`Got it — <strong>${choice}</strong>. ✅`, () => {
+        botSay(`Got it, <strong>${choice}</strong>. ✅`, () => {
             botSay("Briefly describe what you need moved (items, pickup/drop-off, any special requirements).", () => {
                 setInputEnabled(true, 'Describe your job...');
             }, 900);

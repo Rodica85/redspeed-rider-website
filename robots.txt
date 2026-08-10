@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# AI / LLM crawlers — explicit allow for generative search visibility
+# AI / LLM crawlers: explicit allow for generative search visibility
 User-agent: GPTBot
 Allow: /
 
