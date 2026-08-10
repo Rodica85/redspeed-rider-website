@@ -143,13 +143,13 @@ a {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     background: linear-gradient(135deg, rgba(17,17,17,0.4) 0%, rgba(26,26,26,0.3) 50%, rgba(185,28,28,0.35) 100%), url('hero-van-loading.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 120px 20px 80px;
-    text-align: center;
+    padding: 120px 20px 80px 6%;
+    text-align: left;
     overflow: hidden;
 }
 
@@ -161,12 +161,7 @@ a {
 .hero-content {
     position: relative;
     z-index: 2;
-    background: rgba(0, 0, 0, 0.4);
-    padding: 50px 60px;
-    border-radius: 16px;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    max-width: 850px;
+    max-width: 800px;
 }
 
 .hero h1 {
@@ -176,8 +171,6 @@ a {
     line-height: 1.15;
     margin-bottom: 20px;
     max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
 }
 
@@ -185,7 +178,7 @@ a {
     font-size: 1.25rem;
     color: #E5E5E5;
     max-width: 600px;
-    margin: 0 auto 40px;
+    margin: 0 0 40px;
     line-height: 1.7;
     text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
 }
@@ -193,7 +186,7 @@ a {
 .hero-buttons {
     display: flex;
     gap: 15px;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 
@@ -935,8 +928,6 @@ a {
     }
 
     .hero-content {
-        padding: 30px 20px;
-        margin: 0 10px;
         max-width: 100%;
     }
 
@@ -950,7 +941,7 @@ a {
 
     .hero-buttons {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
     }
 
     .hero-buttons .btn {
@@ -998,10 +989,6 @@ a {
 }
 
 @media (max-width: 480px) {
-    .hero-content {
-        padding: 25px 15px;
-    }
-
     .hero h1 {
         font-size: 1.8rem;
     }
