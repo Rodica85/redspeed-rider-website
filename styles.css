@@ -144,7 +144,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(17,17,17,0.4) 0%, rgba(26,26,26,0.3) 50%, rgba(185,28,28,0.35) 100%), url('man-and-van-melbourne.jpg');
+    background: linear-gradient(135deg, rgba(17,17,17,0.4) 0%, rgba(26,26,26,0.3) 50%, rgba(185,28,28,0.35) 100%), url('hero-van-loading.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
