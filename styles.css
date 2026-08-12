@@ -147,7 +147,7 @@ a {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 120px 0 80px;
+    padding: 120px 0 220px;
     text-align: left;
     overflow: hidden;
 }
@@ -232,6 +232,21 @@ a {
     transform: translateY(-2px);
 }
 
+/* Same outline style as .btn-outline, but for use on light backgrounds
+   (white/gray-100 sections) where a white-on-white outline is invisible. */
+.btn-outline-dark {
+    background: transparent;
+    color: var(--black);
+    border-color: var(--gray-800);
+}
+
+.btn-outline-dark:hover {
+    background: var(--black);
+    color: var(--white);
+    border-color: var(--black);
+    transform: translateY(-2px);
+}
+
 .btn-whatsapp {
     background: var(--whatsapp);
     color: var(--white);
@@ -249,6 +264,17 @@ a {
 .about {
     padding: 100px 0;
     background: var(--white);
+}
+
+/* For an .about section placed right after the hero, so the page stays
+   dark for one more screen instead of cutting straight to white. */
+.about-dark {
+    background: var(--black);
+    color: var(--white);
+}
+
+.about-dark .about-text p {
+    color: var(--gray-400);
 }
 
 .about-content {
@@ -303,6 +329,22 @@ a {
 .services {
     padding: 100px 0;
     background: var(--gray-100);
+}
+
+/* For a .services section placed right after the hero, so the page
+   stays dark for one more screen instead of cutting straight to
+   white/light-gray. Cards stay white and read as panels on the dark
+   backdrop. */
+.services-dark {
+    background: var(--black);
+}
+
+.services-dark .section-title {
+    color: var(--white);
+}
+
+.services-dark .section-subtitle {
+    color: var(--gray-400);
 }
 
 .services-grid {
@@ -950,17 +992,26 @@ a {
         display: flex;
     }
 
+    .hero {
+        text-align: center;
+    }
+
     .hero h1 {
         font-size: 2.2rem;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .hero-subtitle {
         font-size: 1.05rem;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .hero-buttons {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        justify-content: center;
     }
 
     .hero-buttons .btn {
