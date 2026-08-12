@@ -145,7 +145,7 @@ a {
     align-items: center;
     background: linear-gradient(135deg, rgba(17,17,17,0.4) 0%, rgba(26,26,26,0.3) 50%, rgba(185,28,28,0.35) 100%), url('hero-van-loading.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center 15%;
     background-repeat: no-repeat;
     padding: 120px 0 220px;
     text-align: left;
