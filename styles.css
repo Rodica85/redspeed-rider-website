@@ -68,24 +68,43 @@ a {
     z-index: 1000;
     background: var(--black);
     padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
     transition: all 0.3s;
 }
 
 .navbar.scrolled {
     padding: 10px 0;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
 }
 
 .nav-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
+    min-height: 50px;
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 900;
-    letter-spacing: 1px;
+    position: absolute;
+    left: 55px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    line-height: 0;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    display: block;
+    border-radius: 50%;
+    transition: height 0.3s;
+}
+
+.navbar.scrolled .logo-img {
+    height: 44px;
 }
 
 .logo-red {
@@ -143,7 +162,7 @@ a {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, rgba(17,17,17,0.4) 0%, rgba(26,26,26,0.3) 50%, rgba(185,28,28,0.35) 100%), url('hero-van-loading.jpg');
+    background: linear-gradient(135deg, rgba(17,17,17,0.3) 0%, rgba(26,26,26,0.18) 50%, rgba(185,28,28,0.25) 100%), url('hero-van-loading.jpg');
     background-size: cover;
     background-position: center 15%;
     background-repeat: no-repeat;
@@ -167,13 +186,14 @@ a {
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    font-weight: 900;
+    font-size: 2.75rem;
+    font-weight: 700;
     color: var(--white);
-    line-height: 1.15;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
     margin-bottom: 20px;
-    max-width: 800px;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    max-width: 760px;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.45);
 }
 
 .hero-subtitle {
@@ -298,8 +318,9 @@ a {
 }
 
 .about-text h2 {
-    font-size: 2.2rem;
-    font-weight: 900;
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
     margin-bottom: 20px;
 }
 
@@ -313,8 +334,9 @@ a {
 /* ===== SECTION TITLES ===== */
 .section-title {
     text-align: center;
-    font-size: 2.5rem;
-    font-weight: 900;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
     margin-bottom: 10px;
 }
 
@@ -997,7 +1019,7 @@ a {
     }
 
     .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
         margin-left: auto;
         margin-right: auto;
     }
@@ -1032,7 +1054,7 @@ a {
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: 1.65rem;
     }
 
     .services-grid {
@@ -1063,8 +1085,8 @@ a {
         font-size: 1.8rem;
     }
 
-    .logo {
-        font-size: 1.2rem;
+    .logo-img {
+        height: 42px;
     }
 
     .about {
