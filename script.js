@@ -58,7 +58,7 @@ if (quoteForm) quoteForm.addEventListener('submit', (e) => {
     whatsappMsg += `\n*Details:*\n${message}`;
 
     const encoded = encodeURIComponent(whatsappMsg);
-    const whatsappURL = `https://wa.me/447466025934?text=${encoded}`;
+    const whatsappURL = `https://wa.me/447424714686?text=${encoded}`;
 
     // Also send via email as backup (mailto)
     const emailSubject = encodeURIComponent(`Quote Request - ${service} - ${name}`);
@@ -142,7 +142,7 @@ const chatInput = document.getElementById('chatInput');
 const chatSend = document.getElementById('chatSend');
 const chatInputArea = document.getElementById('chatInputArea');
 
-const WHATSAPP_NUMBER = '447466025934';
+const WHATSAPP_NUMBER = '447424714686';
 
 const SERVICES_LIST = [
     'Man with a Van',
@@ -236,7 +236,7 @@ function handleOptionClick(choice) {
 
     if (chatState.step === 'greeting') {
         if (choice === 'Just browsing') {
-            botSay("No problem! Feel free to explore. If you change your mind, I'm here. You can also call us directly at <strong>07466 025934</strong> or message us on WhatsApp anytime. 😊");
+            botSay("No problem! Feel free to explore. If you change your mind, I'm here. You can also call us directly at <strong>07466 025934</strong> or <strong>07424 714686</strong>, or message us on WhatsApp anytime. 😊");
             return;
         }
         chatState.step = 'name';
@@ -308,7 +308,10 @@ function sendToWhatsApp() {
                             <i class="fab fa-whatsapp"></i> Send on WhatsApp
                         </a>
                         <a href="tel:+447466025934" class="chat-option-btn" style="text-decoration:none;display:block;text-align:center;">
-                            📞 Call us now
+                            📞 Call 07466 025934
+                        </a>
+                        <a href="tel:+447424714686" class="chat-option-btn" style="text-decoration:none;display:block;text-align:center;">
+                            📞 Call 07424 714686
                         </a>
                     `;
                     chatMessages.appendChild(finalOptions);
