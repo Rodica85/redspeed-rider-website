@@ -7,3 +7,6 @@ node_modules/
 # SEO audit snapshots (kept outside repo to avoid bloat)
 seo-report-*.json
 seo-report-*.pdf
+
+# Marketing working docs (private, not for the public site)
+marketing/
