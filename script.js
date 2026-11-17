@@ -160,12 +160,48 @@ let chatState = {
     data: { name: '', phone: '', service: '', details: '' }
 };
 
-if (chatToggle) chatToggle.addEventListener('click', () => {
-    chatWidget.classList.toggle('open');
-    if (chatWidget.classList.contains('open') && chatMessages.children.length === 0) {
-        startChat();
+const chatBox = document.getElementById('chatBox');
+const chatClose = document.getElementById('chatClose');
+const phoneLayout = window.matchMedia('(max-width: 480px)');
+
+// On phones the chat covers the visible screen and stays above the keyboard.
+function fitChatToPhone() {
+    if (!chatWidget || !chatBox) return;
+    const open = chatWidget.classList.contains('open');
+    const vv = window.visualViewport;
+    if (open && phoneLayout.matches) {
+        document.documentElement.style.overflow = 'hidden';
+        if (vv) {
+            chatBox.style.top = vv.offsetTop + 'px';
+            chatBox.style.left = vv.offsetLeft + 'px';
+            chatBox.style.width = vv.width + 'px';
+            chatBox.style.height = vv.height + 'px';
+        }
+    } else {
+        document.documentElement.style.overflow = '';
+        chatBox.style.top = chatBox.style.left = chatBox.style.width = chatBox.style.height = '';
     }
+}
+
+function setChatOpen(open) {
+    chatWidget.classList.toggle('open', open);
+    if (chatToggle) chatToggle.setAttribute('aria-label', open ? 'Close chat' : 'Open chat');
+    fitChatToPhone();
+    if (open && chatMessages.children.length === 0) startChat();
+}
+
+if (chatToggle) chatToggle.addEventListener('click', () => {
+    setChatOpen(!chatWidget.classList.contains('open'));
 });
+if (chatClose) chatClose.addEventListener('click', () => setChatOpen(false));
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && chatWidget && chatWidget.classList.contains('open')) setChatOpen(false);
+});
+if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', fitChatToPhone);
+    window.visualViewport.addEventListener('scroll', fitChatToPhone);
+}
+window.addEventListener('resize', fitChatToPhone);
 
 function appendMessage(text, type = 'bot') {
     const msg = document.createElement('div');
@@ -219,7 +255,8 @@ function setInputEnabled(enabled, placeholder = 'Type your answer...') {
     chatInput.disabled = !enabled;
     chatSend.disabled = !enabled;
     chatInput.placeholder = placeholder;
-    if (enabled) chatInput.focus();
+    // On phones, opening the keyboard by itself would hide the conversation.
+    if (enabled && !phoneLayout.matches) chatInput.focus();
 }
 
 function startChat() {
