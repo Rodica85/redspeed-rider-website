@@ -973,12 +973,50 @@ a {
 .chat-input-area button:hover { background: var(--red-dark); }
 .chat-input-area button:disabled { background: #ccc; cursor: not-allowed; }
 
+.chat-close {
+    margin-left: auto;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.18);
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-close:hover { background: rgba(255,255,255,0.3); }
+
+.chat-messages { overscroll-behavior: contain; }
+
+/* Phones: the chat fills the visible screen (script.js keeps it above the keyboard) */
 @media (max-width: 480px) {
     .chat-box {
-        width: calc(100vw - 20px);
-        left: -15px;
-        height: 70vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        bottom: auto;
+        border-radius: 0;
+        animation: none;
     }
+
+    /* above the menu bar and the WhatsApp button; the cookie banner stays on top */
+    .chat-widget.open { z-index: 1001; }
+
+    .chat-widget.open .chat-toggle { display: none; }
+
+    .chat-close { width: 44px; height: 44px; }
+
+    /* 16px stops iPhone zooming the page when the field is tapped */
+    .chat-input-area input { font-size: 16px; }
+
+    .chat-input-area { padding-bottom: max(12px, env(safe-area-inset-bottom)); }
 }
 
 /* ===== RESPONSIVE ===== */
